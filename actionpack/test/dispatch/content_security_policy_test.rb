@@ -193,6 +193,9 @@ class ContentSecurityPolicyTest < ActiveSupport::TestCase
   def test_reporting_directives
     @policy.report_uri "/violations"
     assert_match %r{report-uri /violations}, @policy.build
+
+    @policy.report_to "group-name"
+    assert_match %r{report-to group-name}, @policy.build
   end
 
   def test_other_directives

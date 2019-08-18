@@ -186,6 +186,10 @@ module ActionDispatch #:nodoc:
       end
     end
 
+    def report_to(group_name)
+      @directives["report-to"] = [group_name]
+    end
+
     def report_uri(uri)
       @directives["report-uri"] = [uri]
     end
